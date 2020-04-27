@@ -24,6 +24,7 @@ import java.util.ArrayList;
 // CONTROLLER 객체
 //   어플리케이션의 동작, 데이터 처리(CRUD), (Business logic 담당)
 
+//aa
 
 public class PhonebookManager implements Pb, Closeable {
 
