@@ -13,7 +13,7 @@ public class Hello {
 		System.out.println('A'+'B');
 		System.out.println('1'+2);
 		System.out.println();
-		System.out.println('J' + "ava");
+		System.out.println('J' + "avaa");
 		/*
  * Java 첫 프로그램.
  * [학습목표]
