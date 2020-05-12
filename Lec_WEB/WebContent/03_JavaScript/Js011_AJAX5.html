@@ -72,7 +72,6 @@ function loadData() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(this.responseText);
 			parseJSON(jsonObj);
 		}
 	};
@@ -99,10 +98,10 @@ function parseXML(xmlDOM) {
 
 function parseJSON(jsonText){
 
+	var jsonObj = JSON.parse(jsonText);
+	 
 	var row = jsonObj.stationList;
-
-	var table="<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
-
+	var i;
 	for(i = 0; i < row.length; i++){
 		table += "<tr>";
 		table += "<td>" + row[i].statnNm + "</td>";
