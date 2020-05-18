@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* body 초기화
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;  
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+height: 100%;
+}
+
+body {
+margin: 0px;
+overflow-x:hidden;
+overflow-y:auto;
+}
+
+h1 {
+  margin: 2em 0 1.5em 0;
+}
+
+button { /* 버튼 기본 스타일 */
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#nav1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #00001E;
+  /* background: linear-gradient(to right, #0D3FA5, #3163C9, #6799FF, #8BBDFF, #8BBDFF); */
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-menu > li {
+  float: left;
+    position: relative;
+    width: 200px;
+  }
+
+#main-menu > li > a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: block;
+  padding: 14px 36px;
+  border-right: 1px solid rgba(0,0,0,0.15);
+  text-shadow: 5px 2px 2px gray;
+  
+}
+
+#main-menu > li:nth-child(1) > a {
+  border-left: 1px solid rgba(0,0,0,0.15);
+}
+
+#sub-menu {
+  position: absolute;
+  background: #182952;
+  /* opacity: 0;
+  visibility: hidden; */
+  display: none;
+  transition: all 0.15s ease-in;
+  width: 200px;
+  text-align: center;
+  z-index: 2;
+}
+
+#sub-menu > li {
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#sub-menu > li >  a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+#main-menu > li:hover #sub-menu {
+  display: block;
+  /* opacity: 1;
+  visibility: visible; */
+}
+/* 
+#sub-menu > li >  a:hover {
+ text-decoration: underline;
+} */
+
+section {
+  column-width: 15em;
+  background: #dadadf;
+  padding: 2em 12em;
+}
+
+.log {
+    
+    text-align: right;
+    font-weight: bold;
+    margin: 4px;
+    width: 100px;
+    position: relative;
+    float: right;
+
+    
+}
+
+#title {
+    color : orangered;
+    text-align: center;
+    font-size: 35pt;
+    font-weight: bold;
+    background-color: #00001E;
+    /* border-top: 1px  solid black; */
+    border-bottom: 1px  solid black;
+    text-shadow: 5px 2px 2px gray;
+    padding: 0px;
+    width: 100%;
+}
+
+
+@font-face{
+    font-family: "typo_storm";
+    src: url(./font/Typo_StormB.ttf);
+}
+
+
+
+
+/*-------------------------------------------------------로그인----------------------------------------*/
+
+/* Model */
+.modal {  
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow: auto;
+  padding-top: 60px;
+
+  display: none;  /* 처음에는 팝업 안보이게 하기 */
+}
+
+.modal-content {  /* 모달 팝업 안의 form */
+  background-color: white;
+  width: 30%;
+  margin: 5px auto;
+  border: 1px solid #888;
+}
+
+.imgcontainer {
+  text-align: center;  /* 이미지 중앙 정렬 */
+  margin: 24px 0 12px 0;  /* 바깥 여백 */
+  position: relative;
+}
+
+.close { /* 닫기 버튼 (x) */
+  font-size: 35px;
+  font-weight: bold;
+  color: #000;
+  /* position 설정하여 우상단으로 배치 */
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+img.avatar {
+  width: 40%;  /* 원래 이미지 크기의 40% */
+  border-radius: 50%;  /* 이미지 둥글게 */
+}
+
+/* --------------------------------------- */
+/* form */
+
+.container {
+  padding-top: 16px;
+  background-color: white;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding : 12px 20px;
+  margin : 8px 0;
+  border : 1px solid #ccc;
+  display: inline-block;
+  box-sizing: border-box;  /* border 등 size가 width 안으로 들어옴 */
+}
+
+
+.cancelbtn {
+  width: auto; /* 내부 담는 content 만큼의 폭 */
+  padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
+  background-color: #f44336;
+}
+
+span.psw {
+  float: right; 
+  padding-top: 16px;
+}
+
+/* 380 px  이하 화면에서 RWD */
+@media screen and (max-width: 380px){
+  .cancelbtn {
+      width: 100%;
+  }
+  span.psw {
+      float: none;
+      display: block;
+  }
+}
+
+/* 애니메이션 zoom 효과 */
+
+.animate {
+  animation: animatezoom 0.6s;
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+button.log{
+  background-color:  white;
+  color: black;
+  text-align: right;
+  font-weight: bold;
+  margin: 4px;
+  width: 100px;
+  position: relative;
+  float: right;
+}
+
+/* -----------------로그인 팝업 끝--------------- */
+
+#log_div{
+  margin: 0 100px;
+}
+
+#log_tab{
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+/* ---------------login-------------------- */
+
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+
+
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 330px;
+  padding: 10px;
+  background-color: #D5D5D5;
+  float: right;
+  bottom: 20px;
+  /* border: 1px solid black; */
+  margin-right: 100px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.poster{
+  
+  width: 22%;
+  margin-right: 2%;
+}
+
+.poster_li{
+  width: 25%;
+  padding: 0 5%;
+  
+}
+.posterbtn{
+  /* margin: 0px 160px; */
+  width: 22%;
+  height: 30px;
+  border-radius: 5px ;
+  border: 2px solid #00A2C9;
+  background-color: #00A2C9;
+  color: white;
+  margin-right: 2%;
+  margin: 2%  2% 2%  0;
+  cursor: pointer;
+}
+.posterbtn:hover{
+  opacity: 0.8;
+}
+#cura{
+  background-color: #180054;
+  width: 100%;
+  padding-left: 50px;
+  padding-bottom: 0px;
+}
+
+#cura_tit{
+  color: white;
+  text-align: left;
+  width: 100%;
+  font-size: x-large;
+  font-weight: bold;
+  padding: 30px 0;
+  /* background-color: black; */
+}
+
+#lala{
+  width: 22%;
+  height: 100%;
+  float: left;
+}
+#curatitle{
+  float: left;
+  font-size: x-large;
+  width: 60%;
+  color: white;
+  padding-top: 15px;
+  padding-left: 50px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+.curaex{
+  color: white;
+  float: left;
+  margin-left: 50px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 60%;
+}
+
+.curaimg{
+  /* margin-top: 50px; */
+  border-radius: 10px;
+  width: 15%;
+  height: auto;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.cura_subtit{
+  float: left;
+  margin-left: 20px;
+  margin-right: 10px;
+  min-width: 13%;
+  color: white;
+  text-align: center;
+}
+
+
+#foot{
+  width: 100%;
+  padding: 50px 20px;
+  color: #fff;
+  background-color: #00001E;
+}
+li a{
+  text-decoration: none;
+  color: white
+}
+#foot_ul li a:hover{
+  color: blue;
+}
+#boximg{
+  height: 90%; 
+  margin-top: 70px; 
+  /* float: left; */
+  transition: all 0.3s ease;
+}
+
+#box_head{
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  text-align: center; 
+  font-size: 50px;
+  margin : 0 8% 0px 0;
+  float: left;
+  transition: all 0.3s ease;
+}
+
+#box_ex{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  /* color: rgb(240, 240, 240); */
+  font-size: 30px;
+  margin : 0 80px 0 0;
+  font-family: 'Gamja Flower', cursive;
+  transition: all 0.3s ease;
+}
+#box{
+  position: relative;
+	margin: 0 0 3% 3%;
+	width : 100%;
+	height: 600px;
+}
+
+@media screen and (max-width: 1400px){  
+  #box_ex{
+    font-size: 20px;
+    
+  }
+  #box_head{
+    font-size: 30px;
+
+  }
+  #boximg{
+    height: 60%;
+
+    /* display: none; */
+  }
+  #foot_ul{
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 1020px){  
+  #boximg{
+    height: 45%;
+    /* display: none; */
+  }
+
+}
+
+@media screen and (max-width: 825px){  
+  #boximg{
+    left: 19%;
+    top: 5%;
+    width: 32%;
+    height: auto;
+    /* margin: auto; */
+    margin-top: 30%;
+    margin-left: 22%;
+    float: inline-start;
+    /* display: none; */
+  }
+  #box_ex{
+    display: none;
+  }
+  #box_head{
+    font-weight: bolder;
+    width: 100;
+    margin:0;
+    left: auto;
+  }
+
+}
+
+@media screen and (max-width: 1150px){
+  .curaimg{
+    visibility: hidden;
+    
+  }
+  #lala{
+    display: none;
+  }
+  #foot_ul{
+    font-size: 10px;
+  }
+  .curaex{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1250px){
+  #les{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px){
+  #cura{
+    display: none;
+  }
+}

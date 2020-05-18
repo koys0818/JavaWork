@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxOffice</title>
+    <script src="boxoffice.js" type="text/javascript"></script>
+    <link href="boxoffice.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div style="width: 100%;">
+      <button id="loginBtn" style="width:auto; background-color: #00001E; color: white;" class="log">Login</button>
+      <button id="signupBtn" onclick="location.href='sign_up.html'" style="width:auto; background-color: #00001E; color: white;" class="log">sign up</button>
+    </div>
+    <div id="title">
+      <a style="text-decoration: none; color: orangered;" href="index.html"> movier</a>
+  </div>
+
+    <nav role="navigation">
+        <ul id="main-menu">
+          <li><a href="#">movie</a>
+            <ul id="sub-menu">
+              <li><a href="#" aria-label="subemnu">상영중인 영화</a></li>
+              <li><a href="#" aria-label="subemnu">국내 박스오피스</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Ticketing</a>
+            <ul id="sub-menu">
+              <li><a href="#" aria-label="subemnu">예매</a></li>
+            </ul>
+          </li>
+          <li><a href="#">event</a></li>
+        </ul>
+      </nav>
+    <article style="width: 100%;">
+      <div id="date_tit">
+        박스오피스 랭킹을 확인하세요!
+      </div>
+      <div style="margin: 0 30px 100px 30px; width: 90%;">
+        <form class="box">
+            <input type="text" name="date" id="date" placeholder="yyyymmdd">
+            <button type="button" id="serbtn"><img src="./img/icon.png" width="15px"></button>
+            <button type="button" id="delbtn" onclick="removedate()"><img src="./img/del.png" width="15px"></button>
+        </form>
+      </div>
+      <h2></h2>
+      <table id="date_table">
+
+      </table>
+    </article>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer id="foot">
+      <nav>
+        <div>
+          <ul id="foot_ul">
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">회사소개</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">IR</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">채용정보</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">광고/프로모션문의</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">제휴문의</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">출점문의</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">이용약관</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">편성기준</a></li>
+            <li style="padding: 0px 20px; float: left; border-right: 1px solid gray;"><a href="#">개인정보처리방침</a></li>
+            <li style="padding: 0px 20px; float: left;"><a href="#">법적고지</a></li>
+  
+          </ul>
+        </div>
+      </nav>
+  
+      <div style="margin: 40px 20px; width: 100%;">
+        <div>Movier</div>
+        <p>연락처 : 010-1234-5678<br>주소 : 경기도 성남시 분당구 정자동 아이파크분당 ooo동 000호</p>
+      </div>
+  
+    </footer>
+</body>
+</html>

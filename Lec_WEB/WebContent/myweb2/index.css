@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;  
+  }
+
+
+
+a.log {
+    
+    text-align: right;
+    font-weight: bold;
+    margin: 4px;
+    width: 100px;
+    position: relative;
+    float: right;
+}
+div#title {
+    color : orangered;
+    text-align: center;
+    font-size: 35pt;
+    font-weight: bold;
+    background-color: #FFFED7;
+    /* margin-top: 10px; */
+    border-top: 1px  solid black;
+    border-bottom: 1px  solid black;
+    text-shadow: 5px 2px 2px gray;
+    padding: 0px;
+}
+div a.menu_a{
+    
+    position: relative;
+    text-align: center;
+    font-size: 12pt;
+    font-weight: 900;
+    padding: 0px 40px 0px 40px;
+}
+#movie{
+    margin-left: 600px;
+}
+#menu_bar{
+    background-color: #FFFED7;
+    border-bottom: 1px  solid black;
+}
+
+img#screen{
+    margin-top:100px;
+    margin-bottom:100px;
+    position: relative; z-index: 2;
+    max-width: 100%;
+    height: auto;
+}
+#block{
+    opacity: 0.4;
+    z-index: 10;
+    width: 100%;
+    position: absolute; left:10px; z-index: 1;
+    max-width: 100%;
+    height: auto;
+
+}
+#youtube{
+    position: relative; left:10px; top: 100px; z-index: 2;
+    max-width: 100%;
+}
+ul li{
+    list-style: none;
+    float: left;
+    margin-left: 20px;
+}
+
+
+
+
+/*body 초기화*/
+
+  
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(90deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  }
+  
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #main-menu > li {
+    float: left;
+    position: relative;
+  }
+  
+  #main-menu > li > a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: block;
+    padding: 14px 36px;
+    border-right: 1px solid rgba(0,0,0,0.15);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  }
+  
+  #main-menu > li:nth-child(1) > a {
+    border-left: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  #sub-menu {
+    position: absolute;
+    background: #182952;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.15s ease-in;
+  }
+  
+  #sub-menu > li {
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  #sub-menu > li >  a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+  }
+  
+  #main-menu > li:hover #sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #sub-menu > li >  a:hover {
+   text-decoration: underline;
+  }
+
+
+
